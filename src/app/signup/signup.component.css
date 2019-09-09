@@ -1,0 +1,204 @@
+/**************************************************
+* Name        : signin.component.css
+* Description : For Sign Up Components
+* Author      : Suraj
+* Email       : suraj.b@tarkuli.com
+*
+*************************************************/
+
+
+/* css for signup box */
+#signupmain{
+  margin-top: 50px;
+}
+
+/* css for goto signin box */
+#signinmainInside{
+  height: 548px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+}
+
+#signinsideContent{
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+  height: 558px;
+
+  background: #e55d87;
+  background: -webkit-linear-gradient(to right, #e55d87, #5fc3e4);
+  background: linear-gradient(to right, #e55d87, #5fc3e4);
+
+-webkit-box-shadow: -7px 8px 29px -1px rgba(0,0,0,0.75);
+-moz-box-shadow: -7px 8px 29px -1px rgba(0,0,0,0.75);
+box-shadow: -7px 8px 29px -1px rgba(0,0,0,0.75);
+}
+
+
+#signinsideContentHeading{
+  margin-top: 70px;
+  font-size: 20px;
+  font-weight: 500;
+  color:rgb(70, 64, 64);
+  border: 1px solid whitesmoke;
+  border-radius: 6px;
+}
+
+p{
+  color: rgb(70, 64, 64);
+  text-align: justify;
+}
+
+#signinButton{
+  text-align: center;
+}
+
+
+/* *************************************************** */
+
+
+/*css for  signup  box*/
+#mainSignUp{
+  height: 558px;
+  background-color : whitesmoke;
+  overflow-y: scroll;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  -webkit-box-shadow: -5px 10px 13px -7px rgba(0,0,0,0.75);
+  -moz-box-shadow: -5px 10px 13px -7px rgba(0,0,0,0.75);
+  box-shadow: -5px 10px 13px -7px rgba(0,0,0,0.75);
+}
+
+#signupHeading{
+  text-align: center;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+#facebookLogin{
+  text-align: center;
+  margin-bottom: 20px;
+}
+#facebookIcon{
+  font-size: 25px;
+  float: left;
+}
+
+hr {
+  display: block;
+  position: relative;
+  padding: 0;
+  margin-top: 2px;
+  margin-bottom: 0px;
+  height: 0;
+  width: 100%;
+  max-height: 0;
+  font-size: 1px;
+  line-height: 0;
+  clear: both;
+  border: none;
+  border-top: 1px solid #aaaaaa;
+  border-bottom: 1px solid #ffffff;
+}
+
+
+#orTag{
+  margin:0px;
+  text-align: center;
+  padding: 0px;
+  color: rgb(70, 64, 64);
+  font-size: 10px;
+}
+
+.field{
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.button{
+  border-width: 3px;
+}
+input{
+  border: 2px solid lightgray;
+}
+
+/* ********************************************************** */
+
+/* animation */
+
+.slide-right {
+  z-index: 2;
+  animation-timing-function: linear;
+  -webkit-animation-name: slideright;
+  -webkit-animation-duration: 1s;
+  animation-name: slideright;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+}
+
+@keyframes slideright {
+  0% {transform: translateX(0px);  opacity:   1}
+  100% {transform: translateX(50%);opacity:  0.2}
+}
+
+.slide-left {
+  z-index: 1;
+  animation-timing-function: linear;
+  -webkit-animation-name: slideleft;
+  -webkit-animation-duration: 1s;
+  animation-name: slideleft;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+
+
+}
+
+@keyframes slideleft {
+  0% {transform: translateX(0px)   ; opacity: 1;}
+  100% {transform: translateX(-50%); opacity: 0.2;}
+}
+
+.slide-to-right{
+  z-index: 4;
+  animation-timing-function: linear;
+  -webkit-animation-name: slidetoright;
+  -webkit-animation-duration: 1s;
+  animation-name: slidetoright;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+}
+@keyframes slidetoright {
+  0% {transform: translateX(50%)}
+  100% {transform: translateX(0px)}
+}
+
+.slide-to-left{
+  z-index: 1;
+  animation-timing-function: linear;
+  -webkit-animation-name: slidetoleft;
+  -webkit-animation-duration: 1s;
+  animation-name: slidetoleft;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+}
+@keyframes slidetoleft {
+  0% {transform: translateX(-50%)}
+  100% {transform: translateX(0px)}
+}
+
+/* ********************************************************* */
+
+/* margin of signup and sign in bar */
+
+.is-5{
+  margin: 0px;
+  padding: 0px;
+}
+div .column .is-7{
+  height: 558px;
+  margin: 0px;
+  padding:0px;
+}

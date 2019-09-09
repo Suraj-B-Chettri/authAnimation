@@ -1,0 +1,237 @@
+
+<div id="signupmain" class="columns">
+  <div class="column is-2">
+  </div>
+  <div id="signinmainInside" class="column is-8">
+    <div class="columns">
+
+      <!-- left side  for going to signin page -->
+      <div class="column is-5">
+        <div id="signinsideContent" >
+        <img src="../assets/tarkuli_logo.png" width="20px" height="20px">
+        <img src="../assets/tarkuli_logo1.png" width="20px" height="20px">
+        <br>
+
+        <h1 id="signinsideContentHeading" style="text-align:center;">Welcome Back!</h1>
+        <br>
+
+        <p style="margin-left:10px; margin-right: 10px">
+          To Keep connected with us please
+           login with your personal info.
+        </p>
+        <br>
+
+        <div id="signinButton">
+          <button  (click)="toSignin()" style="color:rgb(70,64,64)" class="button is-primary is-inverted is-outlined">
+          SIGN IN</button>
+          </div>
+          </div>
+      </div>
+
+
+      <!-- right side main content of signup page -->
+      <div  class="column  is-7">
+        <div id="mainSignUp">
+        <h1 id="signupHeading"><span style="color: #e55d87">Create</span>&nbsp;<span style="color:#5fc3e4">Account</span></h1>
+        <br>
+        <div id="facebookLogin">
+            <a class="button is-link is-rounded"> <span><i id="facebookIcon" class="fa fa-facebook-square"></i></span>
+              <p style="color: white;"> &nbsp;&nbsp; Continue with Facebook</p></a>
+        </div>
+        <hr>
+        <div id="orTag">or use your email for registration.</div>
+        <hr>
+
+
+        <!-- form for signup page -->
+        <form style="margin-top: 30px;"
+          #signupForm="ngForm"
+          name="form"
+          (ngSubmit)="signupForm.valid && onSubmit(signupForm)">
+
+      <!-- field of user full name -->
+          <div class="field">
+              <div class="control has-icons-left">
+                <input
+                 class="input"
+                 type="text"
+                 placeholder="Enter Your Full Name"
+                 required
+                 [(ngModel)]="fullName"
+                 name="fullName"
+                 id="fullName"
+                 #fullNameControl = "ngModel"
+                 [ngClass]="{ 'is-danger':(fullNameControl.touched && fullNameControl.invalid)
+                              ||(signupForm.submitted && signupForm.invalid && fullNameControl.invalid) }">
+                <span class="icon is-small is-left">
+                  <i class="fa fa-user"></i>
+                </span>
+              </div>
+              <p class="help is-danger"
+                *ngIf="(fullNameControl.touched && fullNameControl.invalid)
+                       ||(signupForm.submitted && signupForm.invalid && fullNameControl.invalid)">
+                  Please Enter Your Full Name</p>
+            </div>
+
+      <!-- field for email -->
+          <div class="field">
+                <div class="control has-icons-left">
+                  <input
+                   class="input"
+                   type="email"
+                   placeholder="Please Enter Your Email"
+                   required
+                   [(ngModel)]="email"
+                   name="email"
+                   id="email"
+                   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                   #emailControl = "ngModel"
+                   [ngClass]="{ 'is-danger':emailControl.touched && emailControl.invalid
+                              ||(signupForm.submitted && signupForm.invalid && emailControl.invalid)}"
+                   >
+                  <span class="icon is-small is-left">
+                    <i class="fa fa-envelope"></i>
+                  </span>
+                </div>
+                <p class="help is-danger"
+                  *ngIf="(emailControl.touched && emailControl.invalid)
+                         ||(signupForm.submitted && signupForm.invalid && emailControl.invalid)">
+                  {{emailControl.value}} -> invalid Email</p>
+            </div>
+
+      <!-- field for confirm email -->
+      <div class="field">
+          <div class="control has-icons-left">
+            <input
+             class="input"
+             type="email"
+             placeholder="Please Confirm Your Email"
+             required
+             [(ngModel)]="cemail"
+             name="cemail"
+             id="cemail"
+             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+             #cemailControl = "ngModel"
+             [ngClass]="{ 'is-danger':(cemailControl.touched && cemailControl.invalid)||
+                                      (cemailControl.value!=''&& cemailControl.touched &&(cemailControl.value !== emailControl.value))
+                                      ||(signupForm.submitted && signupForm.invalid && cemailControl.invalid) }"
+             >
+            <span class="icon is-small is-left">
+              <i class="fa fa-envelope"></i>
+            </span>
+          </div>
+          <p class="help is-danger"
+             *ngIf="cemailControl.touched && cemailControl.invalid
+                     ||(signupForm.submitted && signupForm.invalid && cemailControl.invalid)">
+            Please Enter valid email </p>
+          <p class="help is-danger"
+            *ngIf=" cemailControl.value!=''&& cemailControl.touched &&(cemailControl.value !== emailControl.value)">
+            Please Enter same email </p>
+        </div>
+
+      <!--field for Enter New Password-->
+        <div class="field">
+          <div class="control has-icons-left">
+            <input
+              class="input"
+              type="password"
+              placeholder="Please Enter New Password"
+              required
+              [(ngModel)]="password"
+              name="password"
+              id="password"
+              pattern=".{6,}"
+              #passwordControl = "ngModel"
+              [ngClass]="{ 'is-danger':(passwordControl.touched && passwordControl.invalid)
+                            ||(signupForm.submitted && signupForm.invalid && passwordControl.invalid)}"
+              >
+              <span class="icon is-small is-left">
+                <i class="fa fa-lock"></i>
+              </span>
+              </div>
+              <p class="help is-danger"
+                *ngIf="(passwordControl.touched && passwordControl.invalid)
+                        ||(signupForm.submitted && signupForm.invalid && passwordControl.invalid)">
+                  password should contain minimum 6 character</p>
+            </div>
+
+      <!-- field to confirm password -->
+        <div class="field">
+            <div class="control has-icons-left">
+              <input
+               class="input"
+               type="password"
+               placeholder="Please Confirm Your Password"
+               required
+               [(ngModel)]="cpassword"
+               name="cpassword"
+               id="cpassword"
+               pattern=".{6,}"
+               #cpasswordControl = "ngModel"
+               [ngClass]="{ 'is-danger':(cpasswordControl.touched && cpasswordControl.invalid)||
+                                        (cpasswordControl.value!=''&& cpasswordControl.touched &&(cpasswordControl.value !== passwordControl.value))
+                                        ||(signupForm.submitted && signupForm.invalid && cpasswordControl.invalid) }"
+               >
+              <span class="icon is-small is-left">
+                <i class="fa fa-lock"></i>
+              </span>
+            </div>
+            <p class="help is-danger"
+               *ngIf="(cpasswordControl.touched && cpasswordControl.invalid)||
+                       (signupForm.submitted && signupForm.invalid && cpasswordControl.invalid)">
+                Password should contain more than 6 character </p>
+            <p class="help is-danger"
+              *ngIf=" cpasswordControl.value!=''&& cpasswordControl.touched &&(cpasswordControl.value !== passwordControl.value)">
+              Please Enter same Password </p>
+          </div>
+
+          <!-- field for select your country -->
+          <div class="field">
+              <div class="control has-icons-left">
+                <input
+                class="input"
+                [(ngModel)]="allcountry"
+                #allcountryControl = "ngModel"
+                placeholder="Select Your Country"
+                required
+                list="countries"
+                name="allcountry"
+                id="allcountry"
+                [ngClass]="{ 'is-danger': (allcountryControl.touched && allcountryControl.invalid)
+                                          ||(signupForm.submitted && signupForm.invalid && allcountryControl.invalid) }"
+                >
+                <datalist id="countries">
+                <option  *ngFor ='let country of countries'> {{country.name}}</option>
+                </datalist>
+                <span class="icon is-small is-left">
+                  <i class="fa fa-search"></i>
+                </span>
+              </div>
+              <p class="help is-danger"
+               *ngIf="(allcountryControl.touched && allcountryControl.invalid)
+                     ||(signupForm.submitted && signupForm.invalid && allcountryControl.invalid)">
+                Please Select Your Country </p>
+          </div>
+          <br>
+          <div style="margin-bottom: 20px" class="field " style="text-align:center">
+              <button class="button  control is-danger is-outlined">
+                <span style="color:#5fc3e4; font-weight: 600">SUBMIT</span>
+              </button>
+          </div>
+
+        </form>
+      </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="column is-2">
+
+  </div>
+</div>
+
+
+
+
+
+

@@ -1,0 +1,35 @@
+
+<!-- <button id="first" type="primary">
+  <span>
+    <img src="../../assets/camera.png" width="40px" height="40px">
+  </span>
+</button> -->
+ <!-- <input id="second" class="input" type="file" name="image"  accept="image/*" capture="environment"  > -->
+<div style="text-align:center">
+<input id="third" type='file' (change)="readUrl($event)" style="display:none"><br>
+<br>
+<img id="second" [src]="url"  width="350px" ><br>
+<button id="first" type="primary">
+    <span>
+      <img src="../../assets/camera.png" width="40px" height="40px">
+    </span>
+  </button>
+  </div>
+<!--
+<button id="first" type="primary">click me</button>
+
+    <img id="second" class="hiding" src="../../assets/camera.png" width="40px" height="40px" > -->
+
+    <div class="center hideform">
+        <button id="close" style="float: right;">X</button>
+        <form action="/action_page.php">
+            First name:<br>
+            <input type="text" name="firstname" value="Mickey">
+            <br>
+            Last name:<br>
+            <input type="text" name="lastname" value="Mouse">
+            <br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <button id="show">Show form</button>

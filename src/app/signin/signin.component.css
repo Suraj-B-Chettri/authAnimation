@@ -1,0 +1,236 @@
+/**************************************************
+* Name        : signin.component.css
+* Description : For Sign In Components
+* Author      : Suraj
+* Email       : suraj.b@tarkuli.com
+*
+*************************************************/
+
+/* column containing both sign in and signup */
+
+
+/* For Sign In Page */
+#signinmain1{
+  margin-top: 50px;
+}
+/* for both side and main content  */
+
+#signinmainInside{
+  height: 548px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+/* for side content page for routing to signup screen */
+.is-5{
+  margin: 0px;
+  padding: 0px;
+}
+#sideContent{
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  height: 558px;
+
+  background: #e55d87;
+  background: -webkit-linear-gradient(to right, #e55d87, #5fc3e4);
+  background: linear-gradient(to right, #e55d87, #5fc3e4);
+
+  -webkit-box-shadow: -5px 10px 13px -7px rgba(0,0,0,0.75);
+  -moz-box-shadow: -5px 10px 13px -7px rgba(0,0,0,0.75);
+  box-shadow: -5px 10px 13px -7px rgba(0,0,0,0.75);
+}
+
+
+#sideContentHeading{
+  margin-top: 70px;
+  margin-left: 30px;
+  margin-right: 30px;
+  font-size: 20px;
+  font-weight: 500;
+  color:rgb(70, 64, 64);
+  border: 1px solid whitesmoke;
+  border-radius: 6px;
+}
+
+p{
+  color: rgb(70, 64, 64);
+  text-align: center;
+}
+
+#signinButton{
+  text-align: center;
+}
+
+
+
+/*signin css*/
+.is-7{
+  margin: 0px;
+  padding: 0px;
+  height: 558px;
+}
+#SignIn{
+  height: 558px;
+  background-color: whitesmoke;
+  padding-top:60px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  -webkit-box-shadow: -5px 10px 13px -7px rgba(0,0,0,0.75);
+  -moz-box-shadow: -5px 10px 13px -7px rgba(0,0,0,0.75);
+  box-shadow: -5px 10px 13px -7px rgba(0,0,0,0.75);
+}
+
+#signinHeading{
+  text-align: center;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+#facebookLogin{
+  text-align: center;
+  margin-bottom: 20px;
+}
+#facebookIcon{
+  font-size: 25px;
+  float: left;
+}
+
+hr {
+  display: block;
+  position: relative;
+  padding: 0;
+  margin-top: 2px;
+  margin-bottom: 0px;
+  height: 0;
+  width: 100%;
+  max-height: 0;
+  font-size: 1px;
+  line-height: 0;
+  clear: both;
+  border: none;
+  border-top: 1px solid #aaaaaa;
+  border-bottom: 1px solid #ffffff;
+}
+
+
+#orTag{
+  margin:0px;
+  text-align: center;
+  padding: 0px;
+  color: rgb(70, 64, 64);
+  font-size: 10px;
+}
+
+.field{
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.button{
+  border-width: 3px;
+}
+input{
+  border: 2px solid lightgray;
+}
+
+/* css for forget password anchor tag */
+#forgot{
+  text-align: center;
+  text-decoration-line: underline;
+}
+
+
+
+/* ********************************************************** */
+
+/* animation of sign in block when click to sign up button */
+
+.slide-right {
+  z-index: 2;
+  animation-timing-function: linear;
+  -webkit-animation-name: slideright;
+  -webkit-animation-duration: 1s;
+  animation-name: slideright;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+}
+
+@keyframes slideright {
+  0% {transform: translateX(0px);}
+  100% {transform: translateX(50%);}
+}
+
+/* animation of sign up block when click to sign up button */
+.slide-left {
+  position: absolute;
+  width: 400px;
+  z-index: -1;
+  animation-timing-function: linear;
+  -webkit-animation-name: slideleft;
+  -webkit-animation-duration: 1s;
+  animation-name: slideleft;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+
+
+}
+@keyframes slideleft {
+  0% {transform: translateX(0px)}
+  100% {transform: translateX(-50%)}
+}
+
+
+/* width of go to signup block will change respectively */
+
+@media only screen and (max-width: 1240px) {
+  #sideContent{
+    width: 340px;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  #sideContent{
+    width: 300px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #sideContent{
+    width: 105%;
+  }
+}
+
+/* animation of signup block while starting  */
+.slide-to-right{
+  position: relative;
+  z-index: 100;
+  animation-timing-function: linear;
+  -webkit-animation-name: slidetoright;
+  -webkit-animation-duration: 1s;
+  animation-name: slidetoright;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+}
+@keyframes slidetoright {
+  0% {transform: translateX(50%)}
+  100% {transform: translateX(0px)}
+}
+
+/* animation of signin block while starting the pagek */
+
+.slide-to-left{
+  position: absolute;
+  z-index: 3;
+  position: absolute;
+  animation-timing-function: linear;
+  -webkit-animation-name: slidetoleft;
+  -webkit-animation-duration: 1s;
+  animation-name: slidetoleft;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+}
+@keyframes slidetoleft {
+  0% {transform: translateX(-50%)}
+  100% {transform: translateX(0px)}
+}
+
+
+

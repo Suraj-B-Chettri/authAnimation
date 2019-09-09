@@ -1,0 +1,126 @@
+
+<div id="signinmain1" class="columns">
+  <div class="column is-2">
+  </div>
+  <div id="signinmainInside" class="column is-8">
+    <div id="columnss" class="columns">
+
+  <!-- main content of signup page -->
+      <div class="column  is-7">
+        <div id="SignIn">
+        <h1 id="signinHeading">
+          <span style="color: #e55d87">SIGN</span>
+          &nbsp;<span style="color:#5fc3e4">IN</span>
+        </h1>
+        <br>
+
+        <div id="facebookLogin">
+            <a class="button is-link is-rounded" (click)="socialSignIn('facebook')"> <span><i id="facebookIcon" class="fa fa-facebook-square"></i></span>
+              <p style="color: white;"> &nbsp;&nbsp; Continue with Facebook</p></a>
+        </div>
+        <hr>
+        <div id="orTag">or use your email for login.</div>
+        <hr>
+
+        <!-- form for signup page -->
+        <form style="margin-top: 30px;"
+          #signinForm="ngForm"
+          name="form"
+          (ngSubmit)="signinForm.valid && onsubmit(signinForm)"
+          >
+
+          <!-- email field in in signin page -->
+          <div class="field">
+              <label class="label">Email</label>
+              <div class="control has-icons-left ">
+                <input
+                 class="input"
+                 type="email"
+                 placeholder="Please Enter Your Email"
+                 required
+                 [(ngModel)]="email"
+                 name="email"
+                 id="email"
+                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                 #emailControl = "ngModel"
+                 [ngClass]="{ 'is-danger':(emailControl.touched && emailControl.invalid)
+                                        ||(signinForm.submitted && signinForm.invalid && emailControl.invalid)  }"
+                 >
+                <span class="icon is-small is-left">
+                  <i class="fa fa-envelope"></i>
+                </span>
+              </div>
+              <p class="help is-danger"
+                *ngIf="(emailControl.touched && emailControl.invalid)
+                       ||(signinForm.submitted && signinForm.invalid && emailControl.invalid)">
+                This email is invalid</p>
+            </div>
+
+            <!-- password field in signin page -->
+            <div class="field">
+                <label class="label">Password</label>
+                <div class="control has-icons-left">
+                  <input
+                   class="input"
+                   type="password"
+                   placeholder="Please Enter Your Password"
+                   required
+                   [(ngModel)]="password"
+                   name="password"
+                   id="password"
+                   pattern=".{6,}"
+                   #passwordControl = "ngModel"
+                   [ngClass]="{ 'is-danger':(passwordControl.touched && passwordControl.invalid)||
+                                            (signinForm.submitted && signinForm.invalid && passwordControl.invalid) }"
+                   >
+                  <span class="icon is-small is-left">
+                    <i class="fa fa-lock"></i>
+                  </span>
+                </div>
+                <p class="help is-danger"
+                  *ngIf="(passwordControl.touched && passwordControl.invalid)
+                          ||(signinForm.submitted && signinForm.invalid && passwordControl.invalid)">
+                  password should contain minimum 6 character</p>
+              </div>
+
+              <!-- forgot password field -->
+          <div id="forgot" class="field control">
+            <a routerLink="/forgotpassword">Forgot your password?</a>
+          </div>
+          <br>
+
+          <div style="margin-bottom: 20px" class="field " style="text-align:center">
+              <button class="button  control is-danger is-outlined"><span style="color:#5fc3e4; font-weight: 600">SIGN IN</span></button>
+          </div>
+        </form>
+      </div>
+      </div>
+
+
+      <!-- right side  for going to signup page -->
+      <div  class="column is-5">
+        <div id="sideContent">
+        <img src="../assets/tarkuli_logo.png" width="20px" height="20px">
+        <img src="../assets/tarkuli_logo1.png" width="20px" height="20px">
+        <br>
+
+        <div id="sideContentHeading" style="text-align:center;">Hello, Friend!</div>
+        <br>
+
+        <p style="height: 48px;margin-left:10px; margin-right:10px;">
+          Enter your personal details
+          and start journey with us.
+        </p>
+        <br>
+
+        <div id="signinButton">
+          <a><button  (click)="toSignup()" style="color:rgb(70,64,64)" class="button is-primary is-inverted is-outlined">
+          SIGN UP</button></a>
+        </div>
+
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="column is-2"></div>
+</div>
